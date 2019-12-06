@@ -34,7 +34,6 @@ public class CreateGraph {
             to.in++;
             from.nexts.add(to);
             from.edges.add(edge);
-            to.edges.add(edge);
         }
         return graph;
     }

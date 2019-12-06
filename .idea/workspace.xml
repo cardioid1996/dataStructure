@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b5ec1917-68e5-4b92-8913-125b56941b25" name="Default Changelist" comment="" />
+    <list default="true" id="b5ec1917-68e5-4b92-8913-125b56941b25" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,17 +33,26 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/ds/graph/KruskalMinTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+            <state relative-caret-position="694">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#382#388#0" expanded="true" />
                 <element signature="e#314#315#0" expanded="true" />
                 <element signature="e#369#370#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="456">
+              <caret line="32" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -77,10 +90,12 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/ds/designModes/WeatherObserverPattern/Observer.java" />
         <option value="$PROJECT_DIR$/src/com/ds/designModes/WeatherObserverPattern/Subject.java" />
         <option value="$PROJECT_DIR$/src/com/ds/designModes/WeatherObserverPattern/DisplayElement.java" />
         <option value="$PROJECT_DIR$/src/com/ds/designModes/WeatherObserverPattern/WeatherData.java" />
@@ -125,21 +140,23 @@
         <option value="$PROJECT_DIR$/src/com/ds/graph/Edge.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/Graph.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/Node.java" />
-        <option value="$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/BFS.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/DFS.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/TopologySort.java" />
         <option value="$PROJECT_DIR$/src/com/ds/structure/UnionFind.java" />
         <option value="$PROJECT_DIR$/src/com/ds/graph/KruskalMinTree.java" />
+        <option value="$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java" />
+        <option value="$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="734" />
-    <option name="y" value="32" />
+    <option name="x" value="168" />
+    <option name="y" value="115" />
     <option name="width" value="1680" />
     <option name="height" value="865" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -170,13 +187,6 @@
               <item name="ds" type="462c0819:PsiDirectoryNode" />
               <item name="graph" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="DataStructure" type="b2602c69:ProjectViewProjectNode" />
-              <item name="DataStructure" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="ds" type="462c0819:PsiDirectoryNode" />
-              <item name="structure" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -186,6 +196,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="deletionFromPopupRequiresConfirmation" value="false" />
@@ -335,15 +346,15 @@
       <workItem from="1574997124688" duration="3482000" />
       <workItem from="1575380832528" duration="10959000" />
       <workItem from="1575443363986" duration="1544000" />
-      <workItem from="1575530050053" duration="12686000" />
+      <workItem from="1575530050053" duration="15876000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180104000" />
+    <option name="totallyTimeSpent" value="183294000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="741" y="267" width="1680" height="865" extended-state="0" />
+    <frame x="168" y="115" width="1680" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.23095824" />
@@ -355,7 +366,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Favorites" order="2" sideWeight="0.5017794" weight="0.25059667" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.22944297" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.22944297" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.39788732" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -363,7 +374,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.5063291" />
+      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2480106" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32552692" />
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.3295325" />
@@ -394,16 +405,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/ds/algorithms/DeleteLinkedlistDuplicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ds/designModes/WeatherObserverPattern/WeatherStation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -767,13 +768,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="39" column="5" lean-forward="true" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ds/graph/TopologySort.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -806,14 +800,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ds/graph/KruskalMinTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+        <state relative-caret-position="694">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#382#388#0" expanded="true" />
             <element signature="e#314#315#0" expanded="true" />
             <element signature="e#369#370#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ds/graph/CreateGraph.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="32" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
         </state>
       </provider>
     </entry>
