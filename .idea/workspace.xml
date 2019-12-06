@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="32" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+            <state relative-caret-position="300">
+              <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -151,10 +151,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="168" />
-    <option name="y" value="115" />
-    <option name="width" value="1680" />
-    <option name="height" value="865" />
+    <option name="x" value="106" />
+    <option name="y" value="619" />
+    <option name="width" value="1724" />
+    <option name="height" value="990" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -346,18 +346,17 @@
       <workItem from="1574997124688" duration="3482000" />
       <workItem from="1575380832528" duration="10959000" />
       <workItem from="1575443363986" duration="1544000" />
-      <workItem from="1575530050053" duration="15876000" />
+      <workItem from="1575530050053" duration="16112000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="183294000" />
+    <option name="totallyTimeSpent" value="183530000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="168" y="115" width="1680" height="865" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.23095824" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4976526" visible="true" weight="0.23095824" />
       <window_info id="Structure" order="1" sideWeight="0.5023474" side_tool="true" weight="0.20858085" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -374,7 +373,7 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2480106" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.2480106" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="13" weight="0.32552692" />
       <window_info anchor="bottom" id="Thumbnails" order="14" weight="0.3295325" />
@@ -820,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ds/graph/PrimMinTree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="32" column="5" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="32" selection-end-column="5" />
+        <state relative-caret-position="300">
+          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
         </state>
       </provider>
     </entry>
