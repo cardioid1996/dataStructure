@@ -67,4 +67,8 @@ public class AbstractBinarySearchTree {
 
     }
 
+    protected TreeNode transplant(TreeNode from, TreeNode to){
+
+    }
+
 }
