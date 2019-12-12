@@ -51,6 +51,27 @@ public class AbstractBinarySearchTree {
     }
 
 
+    protected TreeNode getParent(TreeNode node){
+        if(root == null){
+            return root;
+        }
+        TreeNode curr_root = root;
+        TreeNode curr_parent = root;
+
+        if (root.val == node.val)
+            return null;
+
+        while (curr_root != null && curr_root.val != node.val){
+            curr_parent = curr_root;
+            if (curr_root.val < node.val)
+                curr_root = curr_root.right;
+            else
+                curr_root = curr_root.left;
+        }
+        return curr_parent;
+    }
+
+
     public TreeNode delete(int value){
         TreeNode node = search(value);
         if(node == null)
@@ -63,12 +84,33 @@ public class AbstractBinarySearchTree {
     protected TreeNode delete(TreeNode node){
         if (node == null)
             return null;
+        if (node != root){
+            TreeNode parent = getParent(node);
+
+            if (node.left == null && node.right == null){
+                if(parent.right == node)
+                    parent.right = null;
+                else
+                    parent.left = null;
+                return root;
+            }
+
+            if (node.left == null)
+                transplant(parent, node.right, node);
+            else if (node.right == null)
+                transplant(parent, node.left, node);
+            else{
+                // right != null && left != null
+
+            }
+        }
+        return null;
 
 
     }
 
-    protected TreeNode transplant(TreeNode from, TreeNode to){
-
+    protected TreeNode transplant(TreeNode parent, TreeNode newNode, TreeNode oldNode){
+        return null;
     }
 
 }
