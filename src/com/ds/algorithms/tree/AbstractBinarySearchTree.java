@@ -52,14 +52,11 @@ public class AbstractBinarySearchTree {
 
 
     protected TreeNode getParent(TreeNode node){
-        if(root == null){
-            return root;
+        if(root == null || node == root){
+            return null;
         }
         TreeNode curr_root = root;
         TreeNode curr_parent = root;
-
-        if (root.val == node.val)
-            return null;
 
         while (curr_root != null && curr_root.val != node.val){
             curr_parent = curr_root;
@@ -72,28 +69,19 @@ public class AbstractBinarySearchTree {
     }
 
 
-    public TreeNode delete(int value){
+    public boolean delete(int value){
         TreeNode node = search(value);
         if(node == null)
-            return null;
+            return false;
         else
             return delete(node);
     }
 
 
-    protected TreeNode delete(TreeNode node){
-        if (node == null)
-            return null;
-        if (node != root){
-            TreeNode parent = getParent(node);
+    protected boolean delete(TreeNode node){
 
-            if (node.left == null && node.right == null){
-                if(parent.right == node)
-                    parent.right = null;
-                else
-                    parent.left = null;
-                return root;
-            }
+        if (node != null){
+            TreeNode parent = getParent(node);
 
             if (node.left == null)
                 transplant(parent, node.right, node);
@@ -101,16 +89,40 @@ public class AbstractBinarySearchTree {
                 transplant(parent, node.left, node);
             else{
                 // right != null && left != null
-
+                TreeNode next = getNext(node); // right != null, so next cannot be null
+                if(next != node.right){
+                    transplant(getParent(next), next.right, next);
+                    next.right = node.right;
+                }
+                transplant(getParent(next), next.right, next);
+                next.left = node.left;
             }
+            size--;
+            return true;
         }
-        return null;
+        return false;
 
 
     }
 
-    protected TreeNode transplant(TreeNode parent, TreeNode newNode, TreeNode oldNode){
-        return null;
+    protected void transplant(TreeNode parent, TreeNode newNode, TreeNode oldNode){
+        /** 改变父节点的指向 **/
+        if(parent == null)
+            this.root = newNode;
+        else if(oldNode == parent.right)
+            parent.right = newNode;
+        else
+            parent.left = newNode;
+    }
+
+
+    protected TreeNode getNext(TreeNode node){
+        if (node==null || node.right == null)
+            return null;
+        node = node.right;
+        while(node.left != null)
+            node = node.left;
+        return node;
     }
 
 }

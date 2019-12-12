@@ -1,8 +1,25 @@
 package algorithms.tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class TraverseNoRecursion {
+
+    public static void traverse_layer(TreeNode root){
+        if(root == null)
+            return;
+        Queue<TreeNode> que = new LinkedList<>();
+        que.offer(root);
+        while (!que.isEmpty()){
+            TreeNode node = que.poll();
+            System.out.println(node.val);
+            if(node.left != null)
+                que.offer(node.left);
+            if(node.right != null)
+                que.offer(node.right);
+        }
+    }
 
 
     public static void traverse_preorder(TreeNode root){
