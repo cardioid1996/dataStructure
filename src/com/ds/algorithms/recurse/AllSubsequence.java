@@ -3,7 +3,7 @@ package algorithms.recurse;
 public class AllSubsequence {
     public static void AllSubsequence(String curr, String str, int pos){
         if(pos == str.length()){
-            System.out.println(curr);;
+            System.out.println(curr);
             return;
         }
         AllSubsequence(curr, str, pos+1);

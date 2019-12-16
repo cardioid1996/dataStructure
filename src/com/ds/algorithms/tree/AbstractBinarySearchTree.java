@@ -101,9 +101,8 @@ public class AbstractBinarySearchTree {
             return true;
         }
         return false;
-
-
     }
+
 
     protected void transplant(TreeNode parent, TreeNode newNode, TreeNode oldNode){
         /** 改变父节点的指向 **/
@@ -124,5 +123,7 @@ public class AbstractBinarySearchTree {
             node = node.left;
         return node;
     }
+
+
 
 }
