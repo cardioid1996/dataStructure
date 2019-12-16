@@ -1,4 +1,4 @@
-package com.ds.algorithms;
+package com.ds.algorithms.JZOffer;
 
 import java.util.Arrays;
 import java.util.ArrayList;
