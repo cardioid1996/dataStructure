@@ -1,5 +1,7 @@
 package algorithms.tree;
 
+import com.ds.algorithms.tree.TreeNode;
+
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;

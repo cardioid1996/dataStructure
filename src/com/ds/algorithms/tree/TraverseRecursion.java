@@ -1,5 +1,7 @@
 package algorithms.tree;
 
+import com.ds.algorithms.tree.TreeNode;
+
 public class TraverseRecursion {
 
     public static void traverse_preorder(TreeNode root){

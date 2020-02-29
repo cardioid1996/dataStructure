@@ -1,6 +1,6 @@
 package com.ds.algorithms.JZOffer;
 
-import algorithms.tree.TreeNode;
+import com.ds.algorithms.tree.TreeNode;
 
 public class Q8_NextNodeInBinaryTree {
     /** 找到二叉树中序遍历下，某个结点的后继结点 **/

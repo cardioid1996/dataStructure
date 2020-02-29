@@ -40,6 +40,15 @@ public class Q3_DuplicateNumInArray {
     }
 
 
+    // binary search
+    public static int findDuplicateNumNoModification2(int[] nums){
+        // todo 完成二分解法
+        return 0;
+
+    }
+
+
+
 
     public static void swap(int[] arr, int a, int b){
         int tmp = arr[a];

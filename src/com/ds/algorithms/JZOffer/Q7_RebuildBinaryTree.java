@@ -1,7 +1,6 @@
 package com.ds.algorithms.JZOffer;
 
-import algorithms.tree.TreeNode;
-
+import com.ds.algorithms.tree.TreeNode;
 import java.security.InvalidParameterException;
 import java.util.ArrayList;
 
@@ -12,7 +11,6 @@ public class Q7_RebuildBinaryTree {
 
         if(pre==null || in==null || pre.size()==0 || in.size()==0)
             return null;
-
         return recurse(pre, 0, pre.size()-1, in, 0, in.size()-1);
     }
 

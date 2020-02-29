@@ -1,4 +1,6 @@
-package algorithms.tree;
+package com.ds.algorithms.tree;
+
+import com.ds.algorithms.tree.TreeNode;
 
 public class AbstractBinarySearchTree {
 
