@@ -44,7 +44,7 @@ public class ProducerConsumerQueueCondition {
                         Integer num = new Random().nextInt();
                         list.add(num);
                         workload--;
-                        System.out.println(Thread.currentThread().getName() + " produce " + num + "workload: " + workload);
+                        System.out.println(Thread.currentThread().getName() + " produce " + num + " workload: " + workload);
                         empty.signal();
                     }
                 }catch (InterruptedException e){
