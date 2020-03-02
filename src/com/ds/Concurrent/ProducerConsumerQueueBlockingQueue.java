@@ -8,51 +8,38 @@ public class ProducerConsumerQueueBlockingQueue {
 
     /** BlockingQueue实现的生产者消费者模式 **/
 
-    private static final LinkedBlockingQueue<Integer> blockinQueue = new LinkedBlockingQueue<>(20);
-    private static AtomicInteger workload = new AtomicInteger(100);
-
     public static void main(String[] args) {
 
-        for (int i=0; i<5; ++i)
-            new Thread(new Producer()).start();
-        for (int i=0; i<5; ++i)
-            new Thread(new Consumer()).start();
-    }
+        BlockingQueue<Object> blockingQueue = new ArrayBlockingQueue<>(10);
 
-    private static class Producer implements Runnable{
-
-        @Override
-        public void run() {
-            while (workload.get() > 0){
-                try{
-                    if(workload.get()>0){
-                        blockinQueue.put(new Random().nextInt());
-                        workload.decrementAndGet();
-                        System.out.println("produce, workload: " + workload);
-                    }
-
+        final Runnable producer = () -> {
+            while(true){
+                try {
+                    //blockingQueue.put(ItemFactory.createItem());
+                    blockingQueue.put(new Object());
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
             }
-            return;
-        }
-    }
+        };
 
-    private static class Consumer implements Runnable{
+        for (int i=0; i<5; ++i)
+            new Thread(producer).start();
 
-        @Override
-        public void run(){
-            while(!blockinQueue.isEmpty() || workload.get()>0){
-                try{
-                    int num = blockinQueue.take();
-                    System.out.println("consume " + num);
+        final Runnable consumer = () -> {
+            while(true){
+                try {
+                    Object item = blockingQueue.take();
+                    // process(item);
                 }catch (InterruptedException e){
                     e.printStackTrace();
                 }
             }
-            return;
-        }
+        };
+
+        for (int i=0; i<5; ++i)
+            new Thread(consumer).start();
+
     }
 
 }
