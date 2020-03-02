@@ -1,81 +1,80 @@
 package com.ds.Concurrent;
 
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
-public class ProducerConsumerQueueCondition {
+public class ProducerConsumerQueueCondition<E> {
 
-    private final static LinkedList<Integer> list = new LinkedList<>();
-    private final static ReentrantLock lock = new ReentrantLock();
-    private final static Condition full = lock.newCondition();
-    private final static Condition empty = lock.newCondition();
-    private final static int capacity = 10;
-    private volatile static int workload = 100;
+    private Queue<E> queue;
+    private int max = 16;
+    private ReentrantLock lock = new ReentrantLock();
+    private Condition notFull = lock.newCondition();
+    private Condition notEmpty = lock.newCondition();
+
+    public ProducerConsumerQueueCondition(int size){
+        queue = new LinkedList<>();
+        this.max = size;
+    }
+
+    public void put(E element){
+        lock.lock();
+        try{
+            while (queue.size() == max){
+                notFull.await();
+            }
+            queue.add(element);
+            notEmpty.signalAll();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+        }
+    }
+
+    public E take(){
+        E element = null;
+        lock.lock();
+        try{
+            while(queue.isEmpty()){
+                notEmpty.await();
+            }
+            element = queue.remove();
+            notFull.signalAll();
+        }catch (InterruptedException e){
+            e.printStackTrace();
+        }finally {
+            lock.unlock();
+            return element;
+        }
+    }
 
     public static void main(String[] args) {
-        ExecutorService service = Executors.newFixedThreadPool(10);
-        for (int i=0; i<5; ++i)
-            service.submit(new Producer());
-        for (int i=0; i<5; ++i)
-            service.submit(new Consumer());
-        while(true){
-            if (workload==0 && list.isEmpty()){
-                service.shutdownNow();
-                return;
-            }
-        }
-    }
+        ProducerConsumerQueueCondition<Object> pc = new ProducerConsumerQueueCondition<>(10);
 
-    private static class Producer implements Runnable{
-
-        @Override
-        public void run(){
-            while(workload > 0){
-                lock.lock();
-                try{
-                    while(list.size() == capacity){
-                        full.await();
-                    }
-                    if (workload > 0){
-                        Integer num = new Random().nextInt();
-                        list.add(num);
-                        workload--;
-                        System.out.println(Thread.currentThread().getName() + " produce " + num + " workload: " + workload);
-                        empty.signal();
-                    }
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        final Runnable producer = ()->{
+            while(true){
+                pc.put(new Object());
             }
-        }
-    }
+        };
 
-    private static class Consumer implements Runnable{
-        @Override
-        public void run(){
-            while(list.size()>0 || workload>0){
-                try{
-                    lock.lock();
-                    while (list.size() == 0){
-                        if (workload == 0)
-                            return;
-                        empty.await();
-                    }
-                    int num = list.removeFirst();
-                    System.out.println(Thread.currentThread().getName() + " consume " + num);
-                    full.signal();
-                }catch (InterruptedException e){
-                    e.printStackTrace();
-                }finally {
-                    lock.unlock();
-                }
+        int producer_num = 3;
+        for (int i=0; i<producer_num; ++i)
+            new Thread(producer).start();
+
+        final Runnable consumer = ()->{
+            while(true){
+                Object item = pc.take();
+                // process(item)
             }
-        }
+        };
+
+        int consumer_num = 3;
+        for (int i=0; i<consumer_num; ++i)
+            new Thread(consumer).start();
     }
 }
