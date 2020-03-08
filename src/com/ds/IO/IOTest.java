@@ -4,8 +4,11 @@ import java.io.*;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
+import java.nio.channels.SelectionKey;
+import java.nio.channels.Selector;
+import java.nio.channels.ServerSocketChannel;
 
-public class NIO {
+public class IOTest {
 
     // 用NIO的buffer存取数据
     public static void bufferTest(){
@@ -82,6 +85,7 @@ public class NIO {
     }
 
 
+    // 用NIO实现快速拷贝
     public static void fastCopy(String src, String dist) throws IOException{
         FileInputStream fileInputStream = new FileInputStream(src);
         FileOutputStream fileOutputStream = new FileOutputStream(dist);
@@ -89,6 +93,7 @@ public class NIO {
         FileChannel inChannel = fileInputStream.getChannel();
         FileChannel outChannel = fileOutputStream.getChannel();
 
+        // 每次读1kb
         ByteBuffer buffer = ByteBuffer.allocate(1024);
 
         while (inChannel.read(buffer) != -1){
@@ -99,6 +104,16 @@ public class NIO {
     }
 
 
+    public static void selectorTest() throws IOException{
+        Selector selector = Selector.open();
+        ServerSocketChannel ssChannel = ServerSocketChannel.open();
+        ssChannel.configureBlocking(false);
+        ssChannel.register(selector, SelectionKey.OP_ACCEPT);
+        // 监听事件
+        int num = selector.select();
+
+    }
+
 
     public static void main(String[] args) {
         try {
@@ -108,6 +123,8 @@ public class NIO {
         }
 
     }
+
+
 
 
 
