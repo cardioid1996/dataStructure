@@ -39,7 +39,6 @@ public class ProducerConsumerQueueBlockingQueue {
 
         for (int i=0; i<5; ++i)
             new Thread(consumer).start();
-
     }
 
 }

@@ -61,6 +61,4 @@ public class ProducerConsumerQueue<E> {
         new Thread(producer).start();
         new Thread(consumer).start();
     }
-
-
 }
